@@ -12,7 +12,7 @@ Reports will be available to users logged in using specific admin account detail
 **Menu 1: Login or Register**
 1. Login - For pre-existing customers:
 
-Username(`Email`or`Phone Number`)
+Username(`Email`or`Phone Number`)
 
 `Password` 
 
@@ -65,11 +65,9 @@ A. The balance remains with the client until it expires if it’s the case. (som
 
 **Menu 1: Login**
 
-Login
+`Username` (Username/Employee No.)
 
-`Username` (Username/Employee No.)
-
-`Password`
+`Password`
 
 **Menu 2 - For Admin**
 1. Reports per User specified by Phone Number
@@ -78,7 +76,7 @@ Login
 
 After selection
 
-- Reports display all customer's details (`name`,`plan`,`phone number`),`top-ups`with dates,`current balance`
+- Reports display all customer's details (`name`,`plan`,`phone number`),`top-ups`with dates,`current balance`
 
 Q. Does it start from a search function or a list of customers?
 
