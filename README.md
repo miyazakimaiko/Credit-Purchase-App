@@ -7,7 +7,9 @@ Reports will be available to users logged in using specific admin account detail
 
 # Requirements
 
-### Customer wants to..
+There will be two types of roles -- Admin and Customer(User)
+
+## Customer wants to..
 
 **Menu 1: Login or Register**
 1. Login - For pre-existing customers:
