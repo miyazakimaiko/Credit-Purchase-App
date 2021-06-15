@@ -14,7 +14,7 @@ Reports will be available to users logged in using specific admin account detail
 
 Username(`Email`or`Phone Number`)
 
-`Password` 
+`Password`
 
 2. Register - For New Customers: 
 
@@ -49,13 +49,15 @@ Display Details - *"Hello 'username' Would You Like to.."*
 
 1. Check Your Current Balance - Include Expiration date
 
-2. Top-Up *"How Much Would You Like To Top-Up?"* Check Requirements of users Current Plan, Add to current balance value with new expiration date 
+2. Top-Up *"How Much Would You Like To Top-Up?"*
+
+    Check Requirements of users Current Plan, Add to current balance value with new expiration date 
 
 3. Change Your Current Plan - Plan Menu Appears 
 
     Q. What happens with reminder of current balance?
 
-A. The balance remains with the client until it expires if it’s the case. (some top ups expire some don’t)
+    A. The balance remains with the client until it expires if it’s the case. (some top ups expire some don’t)
 
 4. Request for a Service Call - *"We Will be in touch Soon"* 
 
@@ -77,18 +79,24 @@ A. The balance remains with the client until it expires if it’s the case. (som
 After selection
 
 - Reports display all customer's details (`name`,`plan`,`phone number`),`top-ups`with dates,`current balance`
-
+
 Q. Does it start from a search function or a list of customers?
 
 A. The search is by`phone number`. The system will prompt for this input (*Please, enter the phone number*)
 
-2. Per Plan Report - Menu appears including
+2. Per Plan Report 
 
-1.Pay as You Go
+- Menu appears including
 
-2.Top-Up-20 Plan
+    1 Pay as You Go
 
-3.Premium Plan - Two Options: (A)Last Month (B)Date Range 
+    2 Top-Up-20 Plan
+
+    3 Premium Plan
+
+    then
+    
+    Two Options: (A)Last Month (B)Date Range 
 
 - Display all top-ups for that plan  
 
