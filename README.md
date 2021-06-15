@@ -12,7 +12,9 @@ Reports will be available to users logged in using specific admin account detail
 **Menu 1: Login or Register**
 1. Login - For pre-existing customers:
 
-Username = `Email` or `Phone Number` `Password` 
+Username(`Email`or`Phone Number`)
+
+`Password` 
 
 2. Register - For New Customers: 
 
@@ -24,20 +26,21 @@ Username = `Email` or `Phone Number` `Password`
 
 `Email`
 
-`Password`(Match Password)
+`Password`
+(Match Password)
 
 
 Plan Menu - Selection of Plans
 
-    1. Pay As You Go (Can top up by any amount, no expiration)
+1. Pay As You Go (Can top up by any amount, no expiration)
 
-        Q. Is there a range? 
+    Q. Is there a range? 
 
-        A. No, from the business point of view this customer is allowed to top up as much as they want 
+    A. No, from the business point of view this customer is allowed to top up as much as they want 
 
-    2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month)
+2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month)
 
-    3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month) "Plan ' ' chosen..Thank You" 
+3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month) "Plan ' ' chosen..Thank You" 
 
 
 **Menu 2 - For Login Users (Customers)**
@@ -62,7 +65,11 @@ A. The balance remains with the client until it expires if it’s the case. (som
 
 **Menu 1: Login**
 
-Login - For Admin: `Username` = "Username/Employee No." `Password`
+Login
+
+`Username` (Username/Employee No.)
+
+`Password`
 
 **Menu 2 - For Admin**
 1. Reports per User specified by Phone Number
@@ -71,11 +78,11 @@ Login - For Admin: `Username` = "Username/Employee No." `Password`
 
 After selection
 
-- Reports display all customer's details (`name`, `plan`, `phone number`), `top-ups` with dates, `current balance`
+- Reports display all customer's details (`name`,`plan`,`phone number`),`top-ups`with dates,`current balance`
 
 Q. Does it start from a search function or a list of customers?
 
-A. The search is by `phone number`. The system will prompt for this input (*Please, enter the phone number*)
+A. The search is by`phone number`. The system will prompt for this input (*Please, enter the phone number*)
 
 2. Per Plan Report - Menu appears including
 
