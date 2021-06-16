@@ -1,12 +1,10 @@
+import os
 
-def NewCustomerRegistration():
-    import os
-
-    def clearScreen():
-        os.system('cls')
+def clearScreen():
+    os.system('cls')
 
 
-    def showMenu():
+def showMenu():
         clearScreen()
         print("Welcome!Please follow instructions and provide details for your registration\n")
         print("New user registration:")
@@ -15,20 +13,22 @@ def NewCustomerRegistration():
         
         return input("Please choose an option (1-2): ")
 
-    # 1. Pay As You Go (Can top up by any amount, no expiration)
-    # 2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month)
-    # 3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month) 
-    # "Plan ' ' chosen..Thank You"
-
-    def showPlanMenu():
+def showPlanMenu():
         clearScreen()
         print("Please choose your mobile plan or press 4 to exit:")
         print("1. Pay As You Go (Can top up by any amount, no expiration)")
         print("2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month")
         print("3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month")   
-        print("4. Exit\n")
-        
+        print("4. Exit\n")       
         return input("Please choose an option (1-4): ")
+
+
+def NewCustomerRegistration():
+    
+    # 1. Pay As You Go (Can top up by any amount, no expiration)
+    # 2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month)
+    # 3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month) 
+    # "Plan ' ' chosen..Thank You"
 
     selection = "0"
     planselection="0"
@@ -78,9 +78,6 @@ def NewCustomerRegistration():
             fo.write(str(details['PhoneNumber'])+ ";"+ str(details['FirstName'])+ ";"+ str(details['LastName'])+ 
             ";"+ str(details['Email'])+";"+ str(details['Password'])+";"+str(details['Plan']) +"\n")
         fo.close()
-
-
-
 
 NewCustomerRegistration()
 
