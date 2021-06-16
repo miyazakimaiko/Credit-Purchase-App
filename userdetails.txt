@@ -1,4 +1,2 @@
-PhoneNumber:0876621111 FirstName: Anna LastName: Tim Email: anna@123.gmail.com Password: 123456 Plan: 2
-PhoneNumber:0871112345 FirstName: Emma LastName: Brown Email: emma@brown.ie Password: qwerty Plan: 3
-PhoneNumber:0861234567 FirstName: Esther LastName: Smith Email: esther@smyth.ie Password: 123123123 Plan: 1
-PhoneNumber:0851231234 FirstName: Maiko LastName: Watson Email: maiko@watson.gmail.com Password: yuiop12345 Plan: 2
+0876663232;Harry;Potter;123@123.gmail.com;qweasd;2
+0856662929;Ron;Weasley;ronweasley@hogwarts.com;321456;3
