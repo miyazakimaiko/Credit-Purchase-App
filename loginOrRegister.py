@@ -53,7 +53,7 @@ def LoginAdmin():
     print("ADMIN LOGIN")
     print("===========")
 
-    aUsername = input("Please enter username:  ")  
+    aUsername = input("Please enter employee number:  ")  
     aPassword = input("Please enter password:  ") 
 
     #accessing items from admin list
