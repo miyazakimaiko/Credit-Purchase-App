@@ -1,13 +1,14 @@
 import datetime
-from admin_menu_functions import get_all_topups_by_date_range
+import calendar
+from admin_menu_functions.general_report import *
 
 def admin_main_menu():
     print("=================")
     print("Selection:")
-    print("1. View a customer report")
-    print("2. View per plan report")
-    print("3. View general report")
-    print("4. View all customers")
+    print("1. View a customer report <- not ready to test")
+    print("2. View per plan report <- not ready to test")
+    print("3. View general report <- ready to test")
+    print("4. View all customers <- not ready to test")
     print("5. Exit\n")
 
     def get_selection():
@@ -100,10 +101,14 @@ def per_plan_report_date_range_selection_menu():
     selection = get_selection()
 
     if selection == 1:
-        today = datetime.datetime.now()
-        start = today.replace(day=30)
-        end = today.replace(day=1)
-        get_all_topups_by_date_range(start, end)
+        today = datetime.now()
+        prev_month = today.month - 1
+        prev_monthrange = calendar.monthrange(today.year, prev_month)
+        start = datetime(today.year, prev_month, 1)
+        end = datetime(today.year, prev_month, prev_monthrange[1])
+        
+        # - - - - - - - error - wrong function - - - - - - - - - - - - - - - - - - - - - 
+        # get_all_topups_by_date_range(start, end)
 
     elif selection == 2:
         per_plan_report_custom_date_range_menu()
@@ -116,10 +121,10 @@ def get_start_date():
     date = input("Please enter START DATE in dd/mm/yyyy format :")
 
     try:
-        date = datetime.datetime.strptime(date, "%d/%m/%Y")
+        date = datetime.strptime(date, "%d/%m/%Y")
     except:
         # Keep asking user a date if the input is invalid date format
-        get_start_date()
+        date = get_start_date()
     
     return date
 
@@ -128,10 +133,10 @@ def get_end_date():
     date = input("Please enter END DATE in dd/mm/yyyy format :")
 
     try:
-        date = datetime.datetime.strptime(date, "%d/%m/%Y")
+        date = datetime.strptime(date, "%d/%m/%Y")
     except:
         # Keep asking user a date if the input is invalid date format
-        get_end_date()
+        date = get_end_date()
     
     return date
 
@@ -168,11 +173,13 @@ def general_report_date_range_selection_menu():
     selection = get_selection()
 
     if selection == 1:
-        today = datetime.date.today()
-        start = today.replace(day=30)
-        end = today.replace(day=1)
+        today = datetime.now()
+        prev_month = today.month - 1
+        prev_monthrange = calendar.monthrange(today.year, prev_month)
+        start = datetime(today.year, prev_month, 1)
+        end = datetime(today.year, prev_month, prev_monthrange[1])
 
-        print("run get_all_topups_by_date_range({0}, {1})".format(start, end))
+        get_all_topups_by_date_range(start, end)
 
     elif selection == 2:
         general_report_custom_date_range_menu()
@@ -186,7 +193,7 @@ def general_report_custom_date_range_menu():
     start = get_start_date()
     end = get_end_date()
 
-    print("run get_general_report_by_date_range({0}, {1})".format(start, end))
+    get_all_topups_by_date_range(start, end)
 
 
 # Test run
