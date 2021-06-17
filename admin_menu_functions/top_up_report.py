@@ -2,7 +2,7 @@ from datetime import datetime
 
 # only accept start and end date format -- dd/mm/yyyy
 
-def get_all_topups_by_date_range(start, end):
+def get_all_topups_by_date_range(startDate, endDate):
 
     # with text file read it and create a list of topups here..
     topups = []
@@ -25,8 +25,8 @@ def get_all_topups_by_date_range(start, end):
     topups.append(topup7)
     topups.append(topup8)
 
-    startDate = datetime.strptime(start, "%d/%m/%Y")
-    endDate = datetime.strptime(end, "%d/%m/%Y")
+    # startDate = datetime.strptime(start, "%d/%m/%Y")
+    # endDate = datetime.strptime(end, "%d/%m/%Y")
     totalTopUp = 0
 
     # Header of the topup history table
@@ -38,12 +38,11 @@ def get_all_topups_by_date_range(start, end):
 
         if startDate <= topUpDate and endDate >= topUpDate:
             totalTopUp += topup["topup"]
-            print(f"{topup['phoneNumber'].ljust(15)}{str(topup['topup']).ljust(10)}{str(topup['plan']).ljust(10)}{topup['date']}")
+            print(f"{topup['phoneNumber'].ljust(15)}{str(topup['charged']).ljust(10)}{str(topup['plan']).ljust(10)}{topup['date']}")
 
     print("\nTotal Charge: ", totalTopUp, "\n")
 
 # Test
-get_all_topups_by_date_range("17/05/2020", "17/07/2020")
 
 
 
