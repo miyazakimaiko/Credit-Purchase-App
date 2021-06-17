@@ -32,7 +32,7 @@ def LoginCustomer():
 
     for user in userList:
         if(user['phoneNumber'] == username):
-            userPhoneNumber == user['phoneNumber']
+            userPhoneNumber = user['phoneNumber']
             foundUser = user
             break
 
@@ -63,7 +63,7 @@ def LoginAdmin():
 
     for admin in adminList:
         if(admin['employeeNumber'] == aUsername):
-            adminEmployeeNo == admin['employeeNumber']
+            adminEmployeeNo = admin['employeeNumber']
             foundAdmin = admin
             break
 
