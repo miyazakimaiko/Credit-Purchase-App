@@ -1,4 +1,5 @@
 import datetime
+from admin_menu_functions import get_all_topups_by_date_range
 
 def admin_main_menu():
     print("=================")
@@ -25,16 +26,16 @@ def admin_main_menu():
 
     selection = get_selection()
 
-    if selection is 1:
+    if selection == 1:
         print("SELECTED: 1. View a customer report")
         user_selection_menu()
-    elif selection is 2:
+    elif selection == 2:
         print("SELECTED: 2. View per plan report")
         per_plan_report_plan_selection_menu()
-    elif selection is 3:
+    elif selection == 3:
         print("SELECTED: 3. View general report")
         general_report_date_range_selection_menu()
-    elif selection is 4:
+    elif selection == 4:
         # get_all_customers()
         print("SELECTED: 4. View all customers")
 
@@ -99,11 +100,10 @@ def per_plan_report_date_range_selection_menu():
     selection = get_selection()
 
     if selection == 1:
-        today = datetime.date.today()
+        today = datetime.datetime.now()
         start = today.replace(day=30)
         end = today.replace(day=1)
-
-        print("run get_all_topups_by_date_range({0}, {1})".format(start, end))
+        get_all_topups_by_date_range(start, end)
 
     elif selection == 2:
         per_plan_report_custom_date_range_menu()
