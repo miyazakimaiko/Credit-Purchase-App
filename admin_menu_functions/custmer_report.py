@@ -4,8 +4,8 @@ def get_all_customers():
     customers = []
 
     customer1 = {"phoneNumber": 123456, "firstName": "aaaa", "lastName": "bbbbbb", "email": "myzkmik@gmail.com", "password": "skdmfbir33", "plan": 1, "current balance": 100}
-    customer2 = {"PhoneNumber": 124556, "FirstName": "cccc", "LastName": "ddddd", "Email": "myzkmik@gmail.com", "Password": "skdmfbir33", "Plan": 2, "current balance": 100}
-    customer3 = {"PhoneNumber": 135656, "FirstName": "eeee", "LastName": "ffffff", "Email": "myzkmik@gmail.com", "Password": "skdmfbir33", "Plan": 3, "current balance": 100}
+    customer2 = {"phoneNumber": 163455, "firstName": "bbbb", "lastName": "dddddd", "email": "myzkmik@gmail.com", "password": "skdmfbir33", "plan": 2, "current balance": 100}
+    customer3 = {"phoneNumber": 245456, "firstName": "cccc", "lastName": "eeeeee", "email": "myzkmik@gmail.com", "password": "skdmfbir33", "plan": 3, "current balance": 100}
 
     customers.append(customer1)
     customers.append(customer2)
@@ -17,4 +17,4 @@ def get_all_customers():
     print("Total Number of Customers: ", len(customers))
 
 # Test
-get_all_customers()
+# get_all_customers()
