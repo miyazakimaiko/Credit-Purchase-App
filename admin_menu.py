@@ -106,7 +106,7 @@ def per_plan_report_date_range_selection_menu():
         prev_monthrange = calendar.monthrange(today.year, prev_month)
         start = datetime(today.year, prev_month, 1)
         end = datetime(today.year, prev_month, prev_monthrange[1])
-        
+
         # - - - - - - - error - wrong function - - - - - - - - - - - - - - - - - - - - - 
         # get_all_topups_by_date_range(start, end)
 
@@ -194,7 +194,3 @@ def general_report_custom_date_range_menu():
     end = get_end_date()
 
     get_all_topups_by_date_range(start, end)
-
-
-# Test run
-admin_main_menu()
