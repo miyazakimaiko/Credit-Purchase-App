@@ -19,25 +19,66 @@ def loginOrRegisterMenu():
     print("4. Exit Application")
 
 def LoginCustomer():
-    print("LOGIN")
-    print("=====")
-    
-    username = input("Please enter phone number")
-    password = input("Please enter password")
+    print("CUSTOMER LOGIN")
+    print("==============")
+
+    username = input("Please enter phone number:  ")
+    password = input("Please enter password:  ")
 
     #accessing items from userList
-    userPhoneNumber = userList["phoneNumber"]
-    userPassword = userList["password"]
+    userPhoneNumber = ""
+    userPassword = ""
+    foundUser = None
 
-    if(username == userPhoneNumber and password == userPassword ):
-        print("Login Successful")
-        #plans code / function
+    for user in userList:
+        if(user['phoneNumber'] == username):
+            userPhoneNumber = user['phoneNumber']
+            foundUser = user
+            break
+
+    if(foundUser != None):
+        userPassword = foundUser['password']
+
+    if(username == userPhoneNumber and password == userPassword):
+            print("Login Successful")
+            #plans code / function
+    elif(username != userPhoneNumber and password != userPassword):
+            print("Username & Password Invalid")
     elif(username != userPhoneNumber):
-        print("Invalid Username")
+            print("Invalid Username")
     elif(password != userPassword):
-        print("Invalid Password")
-     
+            print("Invalid Password")
+        
+def LoginAdmin():
+    print("ADMIN LOGIN")
+    print("===========")
 
+    aUsername = input("Please enter employee number:  ")  
+    aPassword = input("Please enter password:  ") 
+
+    #accessing items from admin list
+    adminEmployeeNo = ""
+    adminPassword = ""
+    foundAdmin = 0
+
+    for admin in adminList:
+        if(admin['employeeNumber'] == aUsername):
+            adminEmployeeNo = admin['employeeNumber']
+            foundAdmin = admin
+            break
+
+    if foundAdmin != 0:
+        adminPassword = foundAdmin['password']
+    
+    if(aUsername == adminEmployeeNo and aPassword == adminPassword):
+            print("Login Successful")
+            #admin code / function
+    elif(aUsername != adminEmployeeNo and aPassword != adminPassword):
+            print("Username and login invalid")
+    elif(aUsername != adminEmployeeNo):
+            print("Invalid Username")
+    elif(aPassword != adminPassword):
+            print("Invalid Password")
 
 def Register():
     print()
@@ -52,7 +93,7 @@ while(userType != "4"):
         LoginCustomer()
     elif(userType == "2"):
         print("You have selected 'Login - admin'")
-        #LoginAdmin()
+        LoginAdmin()
     elif(userType == "3"):
         print("You have selected 'Register'")
         Register()
