@@ -10,31 +10,33 @@ def admin_main_menu():
     print("5. Exit\n")
 
     def get_selection():
-        selection = input("Please choose an option (1-5):")
+        number = input("Please choose an option (1-5):")
 
         try:
-            selection = int(selection)
+            number = int(number)
         except:
             # Keep asking user a number if the input is invalid
-            get_selection()
+            number = get_selection()
 
-        if selection > 5 or selection <= 0:
-           get_selection() 
-        else:
-            return selection
+        if number > 5 or number <= 0:
+           number = get_selection() 
+
+        return number
 
     selection = get_selection()
 
-    if(selection == 1):
+    if selection is 1:
+        print("SELECTED: 1. View a customer report")
         user_selection_menu()
-    elif(selection == 2):
+    elif selection is 2:
+        print("SELECTED: 2. View per plan report")
         per_plan_report_plan_selection_menu()
-    elif(selection == 3):
-        print("selection 3")
+    elif selection is 3:
+        print("SELECTED: 3. View general report")
         general_report_date_range_selection_menu()
-    elif(selection == 4):
+    elif selection is 4:
         # get_all_customers()
-        print("selection 4")
+        print("SELECTED: 4. View all customers")
 
 
 def user_selection_menu():
@@ -51,22 +53,23 @@ def per_plan_report_plan_selection_menu():
     print("4. Exit\n")
 
     def get_plan():
-        selection = input("Please choose a plan(1-3) or Exit(4):")
+        number = input("Please choose a plan(1-3) or Exit(4):")
 
         try:
-            selection = int(selection)
+            number = int(number)
         except:
             # Keep asking user a number if the input is invalid
-            get_plan()
+            number = get_plan()
 
-        if selection > 4 or selection <= 0:
-           get_plan() 
-        else:
-            return selection
+        if number > 4 or number <= 0:
+           number = get_plan() 
+
+        return number
 
     plan = get_plan()
 
-    if(plan in range(1, 3)):
+    # Reminder.. 4 doesn't include in range when range(1, 4)
+    if plan in range(1, 4): 
         per_plan_report_date_range_selection_menu()
     elif(plan == 4):
         exit()
@@ -80,18 +83,18 @@ def per_plan_report_date_range_selection_menu():
     print("3. Exit\n")
 
     def get_selection():
-        selection = input("Please choose a date range(1 or 2) or Exit(3):")
+        number = input("Please choose a date range(1 or 2) or Exit(3):")
 
         try:
-            selection = int(selection)
+            number = int(number)
         except:
             # Keep asking user a number if the input is invalid
-            get_selection()
+            number = get_selection()
 
-        if selection > 3 or selection <= 0:
-            get_selection() 
-        else:
-            return selection
+        if number > 3 or number <= 0:
+            number = get_selection() 
+
+        return number
 
     selection = get_selection()
 
@@ -109,26 +112,31 @@ def per_plan_report_date_range_selection_menu():
         exit()
 
 
+def get_start_date():
+    date = input("Please enter START DATE in dd/mm/yyyy format :")
+
+    try:
+        date = datetime.datetime.strptime(date, "%d/%m/%Y")
+    except:
+        # Keep asking user a date if the input is invalid date format
+        get_start_date()
+    
+    return date
+
+
+def get_end_date():
+    date = input("Please enter END DATE in dd/mm/yyyy format :")
+
+    try:
+        date = datetime.datetime.strptime(date, "%d/%m/%Y")
+    except:
+        # Keep asking user a date if the input is invalid date format
+        get_end_date()
+    
+    return date
+
+
 def per_plan_report_custom_date_range_menu():
-
-    def get_start_date():
-        start = input("Please enter START DATE in dd/mm/yyyy format :")
-
-        try:
-            start = datetime.datetime.strptime(start, "%d/%m/%Y")
-        except:
-            # Keep asking user a date if the input is invalid date format
-            get_start_date()
-
-
-    def get_end_date():
-        end = input("Please enter END DATE in dd/mm/yyyy format :")
-
-        try:
-            end = datetime.datetime.strptime(end, "%d/%m/%Y")
-        except:
-            # Keep asking user a date if the input is invalid date format
-            get_end_date()
 
     start = get_start_date()
     end = get_end_date()
@@ -144,18 +152,18 @@ def general_report_date_range_selection_menu():
     print("3. Exit\n")
 
     def get_selection():
-        selection = input("Please choose a date range(1 or 2) or Exit(3):")
+        number = input("Please choose a date range(1 or 2) or Exit(3):")
 
         try:
-            selection = int(selection)
+            number = int(number)
         except:
             # Keep asking user a number if the input is invalid
-            get_selection()
+            number = get_selection()
 
-        if selection > 3 or selection <= 0:
-            get_selection() 
-        else:
-            return selection
+        if number > 3 or number <= 0:
+            number = get_selection() 
+
+        return number
 
     selection = get_selection()
 
@@ -174,29 +182,10 @@ def general_report_date_range_selection_menu():
 
 
 def general_report_custom_date_range_menu():
-
-    def get_start_date():
-        start = input("Please enter START DATE in dd/mm/yyyy format :")
-
-        try:
-            start = datetime.datetime.strptime(start, "%d/%m/%Y")
-        except:
-            # Keep asking user a date if the input is invalid date format
-            get_start_date()
-
-
-    def get_end_date():
-        end = input("Please enter END DATE in dd/mm/yyyy format :")
-
-        try:
-            end = datetime.datetime.strptime(end, "%d/%m/%Y")
-        except:
-            # Keep asking user a date if the input is invalid date format
-            get_end_date()
  
     start = get_start_date()
     end = get_end_date()
-    # - - - - - - - - -error: start and end returns None- - - - - - - -
+
     print("run get_general_report_by_date_range({0}, {1})".format(start, end))
 
 
