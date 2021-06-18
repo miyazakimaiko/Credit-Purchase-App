@@ -10,76 +10,65 @@ from datetime import datetime
 
 # only accept start and end date format -- dd/mm/yyyy
 
-def get_all_topups_by_date_range(startDate, endDate):
+def get_all_topups_by_date_range(start_date, end_date):
 
     # with text file read it and create a list of topups here..
     topups = []
 
-    topup1 = {"phone_number": "123456", "charged": 30, "plan": 1, "date": "18/05/2021"}
-    topup2 = {"phone_number": "343848", "charged": 30, "plan": 2, "date": "17/06/2021"}
-    topup3 = {"phone_number": "123456", "charged": 30, "plan": 3, "date": "17/07/2020"}
-    topup4 = {"phone_number": "123456", "charged": 30, "plan": 1, "date": "17/04/2020"}
-    topup5 = {"phone_number": "123456", "charged": 30, "plan": 1, "date": "17/03/2020"}
-    topup6 = {"phone_number": "343848", "charged": 30, "plan": 2, "date": "17/02/2020"}
-    topup7 = {"phone_number": "123456", "charged": 30, "plan": 3, "date": "17/01/2020"}
-    topup8 = {"phone_number": "123456", "charged": 30, "plan": 1, "date": "17/09/2020"}
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/02/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/02/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/02/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/02/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/02/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/02/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/02/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/02/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/03/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/03/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/03/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/03/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/03/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/03/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/03/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/03/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/04/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/04/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/04/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/04/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/04/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/04/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/04/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/04/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/05/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/05/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/05/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/05/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/05/2021"})
+    topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/05/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/05/2021"})
+    topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/05/2021"})
 
-    topups.append(topup1)
-    topups.append(topup2)
-    topups.append(topup3)
-    topups.append(topup4)
-    topups.append(topup5)
-    topups.append(topup6)
-    topups.append(topup7)
-    topups.append(topup8)
     # demo data end
 
-    print("Start Date: ", startDate)
-    print("End Date: ", endDate)
+    print("\n")
+    print("=================")
+    print("Result")
+    print("\n")
+    print("Start Date: ", start_date)
+    print("End Date: ", end_date)
 
     # Header of the topup history table
     print("\n")
     print("Phone Number".ljust(15) + "Charged".ljust(10) + "Plan".ljust(10) + "Date")
-    print("---------------------------------------------------------")
+    print("----------------------------------------------")
 
     total_charge = 0
 
     for topup in topups:
-        topUpDate = datetime.strptime(topup["date"], "%d/%m/%Y")
+        topup_date = datetime.strptime(topup["date"], "%d/%m/%Y")
 
-        if startDate <= topUpDate and endDate >= topUpDate:
+        if start_date <= topup_date and end_date >= topup_date:
             total_charge += topup["charged"]
             print(f"{topup['phone_number'].ljust(15)}{str(topup['charged']).ljust(10)}{str(topup['plan']).ljust(10)}{topup['date']}")
 
     print("\nTotal Charge: ", total_charge, "\n")
-
-# Test
-
-
-
-def get_topups(planNumber):
-
-        # in actucal setting read txt file and create a list of topups here..
-    topups = []
-
-    topup1 = {"phoneNumber": "123456", "topup": 30, "plan": 1, "date": "17/05/2020"}
-    topup2 = {"phoneNumber": "343848", "topup": 30, "plan": 2, "date": "17/06/2020"}
-    topup3 = {"phoneNumber": "123456", "topup": 30, "plan": 3, "date": "17/07/2020"}
-    topup4 = {"phoneNumber": "123456", "topup": 30, "plan": 1, "date": "17/04/2020"}
-    topup5 = {"phoneNumber": "123456", "topup": 30, "plan": 1, "date": "17/03/2020"}
-    topup6 = {"phoneNumber": "343848", "topup": 30, "plan": 2, "date": "17/02/2020"}
-    topup7 = {"phoneNumber": "123456", "topup": 30, "plan": 3, "date": "17/01/2020"}
-    topup8 = {"phoneNumber": "123456", "topup": 30, "plan": 1, "date": "17/09/2020"}
-
-    topups.append(topup1)
-    topups.append(topup2)
-    topups.append(topup3)
-    topups.append(topup4)
-    topups.append(topup5)
-    topups.append(topup6)
-    topups.append(topup7)
-    topups.append(topup8)
-
-
-
-    print("Total: ")
