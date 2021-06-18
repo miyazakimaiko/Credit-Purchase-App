@@ -28,22 +28,22 @@ def clearScreen():
 
 
 def showMenu():
-        clearScreen()
-        print("Welcome!Please follow instructions and provide details for your registration\n")
-        print("New user registration:")
-        print("1. Enter details")
-        print("2. Exit\n")
-        
-        return input("Please choose an option (1-2): ")
+    clearScreen()
+    print("Welcome!Please follow instructions and provide details for your registration\n")
+    print("New user registration:")
+    print("1. Enter details")
+    print("2. Exit\n")
+    
+    return input("Please choose an option (1-2): ")
 
 def showPlanMenu():
        
-        print("Please choose your mobile plan or press 4 to exit:")
-        print("1. Pay As You Go (Can top up by any amount, no expiration)")
-        print("2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month")
-        print("3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month")   
-        print("4. Exit\n")       
-        return input("Please choose an option (1-4): ")
+    print("Please choose your mobile plan or press 4 to exit:")
+    print("1. Pay As You Go (Can top up by any amount, no expiration)")
+    print("2. Top-Up-20 Plan (Minimum top-up is 20, credit expires in 1 month")
+    print("3. Premium Plan (Minimum top-up is 30, receive 5 euro free credit, expires in 1 month")   
+    print("4. Exit\n")       
+    return input("Please choose an option (1-4): ")
 
 
 def NewCustomerRegistration():
@@ -73,10 +73,10 @@ def NewCustomerRegistration():
         if(selection == "1"):
             PhoneNumber = input("Please enter your Phone Number!\n")
             if (ValidatePhoneNumber(PhoneNumber)==False):
-                    break
+                break
             else:
-                    if (CheckPhoneNumber(PhoneNumber)==True):
-                        break
+                if (CheckPhoneNumber(PhoneNumber)==True):
+                    break
             print("Please enter your First name!\n")
             FirstName = input()
             print("Please enter your Last name!\n")
@@ -89,12 +89,12 @@ def NewCustomerRegistration():
             clearScreen()
             # if ((planselection=="1") or(planselection=="2")or (planselection=="3")):
             if planselection in("1","2","3"):
-                    user = {"PhoneNumber":PhoneNumber, "FirstName": FirstName, "LastName": LastName, "Email": Email, "Password": Password,
-                    "Plan": planselection}
-                    print("Thank you!You are registered, now you can log in using your phone number and password")
+                user = {"PhoneNumber":PhoneNumber, "FirstName": FirstName, "LastName": LastName, "Email": Email, "Password": Password,
+                "Plan": planselection}
+                print("Thank you!You are registered, now you can log in using your phone number and password")
             elif(planselection!= "4"):
-                    print("Please return to menu and select a digit from 1 to 4")
-                    input("Return to continue...")
+                print("Please return to menu and select a digit from 1 to 4")
+                input("Return to continue...")
         elif(selection != "2"):
             print("Please return to menu and select a digit from 1 to 2")
             input("Return to continue...")
