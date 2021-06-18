@@ -1,0 +1,96 @@
+# ========================================================================================================
+# REQUIREMENTS
+# 
+# Selection 2: Per Plan Report - Menu appears including 
+# 1.Pay as You Go
+# 2.Top-Up-20 Plan
+# 3.Premium Plan
+#  
+#   - Two Options: (A)Last Month (B)Date Range 
+#   - Display all top-ups for that plan  
+
+#   - Are they a list of users? No, it’s a list of top ups per plan per date range (last month or data range)
+#       Anything else to include beside user names (Current balance etc) Its not for user names and current balance, 
+#       its about top ups made that month or period range. It could include the name of the clients who made the 
+#       top up but the aim of this report is to check income per plan 
+
+#   - Display "Total:" of specified plan 
+#       Is it the total amount of all the users’ balance? 
+#       Total in top ups… for example… in June the company had 2.456.875,00 in top ups of users of Premium Plan. 
+# ========================================================================================================
+
+from datetime import datetime
+
+
+def get_selected_plans_topups_by_date_range(plan_number, start_date, end_date):
+
+    # Presume the topup data is in a text file. 
+    # Presume that we read it & convert it into a list of dictionary here...
+    all_topups = []
+
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/02/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/02/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/02/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/02/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/02/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/02/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/02/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/02/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/03/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/03/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/03/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/03/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/03/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/03/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/03/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/03/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/04/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/04/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/04/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/04/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/04/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/04/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/04/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/04/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "01/05/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "04/05/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "08/05/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "12/05/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "15/05/2021"})
+    all_topups.append({"phone_number": "343848", "charged": 30, "plan": 2, "date": "18/05/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 3, "date": "22/05/2021"})
+    all_topups.append({"phone_number": "123456", "charged": 30, "plan": 1, "date": "25/05/2021"})
+    # demo data end
+
+    selected_plans_topups = []
+
+    for topup in all_topups:
+        if topup["plan"] == plan_number:
+            selected_plans_topups.append(topup)
+
+    print("\n")
+    print("=================")
+    print("Result")
+    print("\n")
+    print("Start Date: ", start_date.strftime("%d/%m/%Y"))
+    print("End Date: ", end_date.strftime("%d/%m/%Y"))
+
+    # Header of the topup history table
+    print("\n")
+    print("Phone Number".ljust(15) + "Charged".ljust(10) + "Plan".ljust(10) + "Date")
+    print("----------------------------------------------")
+
+    total_charge = 0
+
+    for topup in selected_plans_topups:
+        topup_date = datetime.strptime(topup["date"], "%d/%m/%Y")
+
+        if start_date <= topup_date and end_date >= topup_date:
+            total_charge += topup["charged"]
+            print(f"{topup['phone_number'].ljust(15)}{str(topup['charged']).ljust(10)}{str(topup['plan']).ljust(10)}{topup['date']}")
+
+    print("\n")
+    print("Total Charge: ", total_charge)
+    print("\n")
+
+    
