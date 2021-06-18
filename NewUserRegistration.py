@@ -11,7 +11,7 @@ def ValidatePhoneNumber(UserPhoneNumber):
 def CheckPhoneNumber(UserPhoneNumber):
     Found=False
     try:
-        fo = open("userdetails.txt", "a")
+        fo = open("userdetails.txt", "r")
     except OSError:
         print('cannot open', "userdetails.txt")
     else:    
@@ -113,5 +113,5 @@ def NewCustomerRegistration():
             fo.write(str(user['PhoneNumber'])+ ";"+ str(user['FirstName'])+ ";"+ str(user['LastName'])+ 
             ";"+ str(user['Email'])+";"+ str(user['Password'])+";"+str(user['Plan']) +"\n")
             fo.close()
-NewCustomerRegistration()
-print("Application Closed")
+
+
