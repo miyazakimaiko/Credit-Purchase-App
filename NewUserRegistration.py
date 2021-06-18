@@ -106,6 +106,4 @@ def NewCustomerRegistration():
         ";"+ str(user['Email'])+";"+ str(user['Password'])+";"+str(user['Plan']) +"\n")
         fo.close()
 
-NewCustomerRegistration()
-
 
