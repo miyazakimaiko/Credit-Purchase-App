@@ -10,16 +10,20 @@ def ValidatePhoneNumber(UserPhoneNumber):
 # if the customer already registered with the phone number provided, the registration is impossib;e and should be cancelled
 def CheckPhoneNumber(UserPhoneNumber):
     Found=False
-    fo = open("userdetails.txt", "r")
-    for x in fo:
-        index = x.find(";")
-        if (index<0):
-            continue
-        if (UserPhoneNumber == x[0:index]):
-            Found=True
-            print("Sorry, the user with phone number "+UserPhoneNumber +" already registered, registration cancelled ")
-            break   
-    fo.close()  
+    try:
+        fo = open("userdetails.txt", "a")
+    except OSError:
+        print('cannot open', "userdetails.txt")
+    else:    
+        for x in fo:
+                index = x.find(";")
+                if (index<0):
+                    continue
+                if (UserPhoneNumber == x[0:index]):
+                    Found=True
+                    print("Sorry, the user with phone number "+UserPhoneNumber +" already registered, registration cancelled ")
+                    break   
+        fo.close()  
     return Found
     
 
@@ -101,9 +105,13 @@ def NewCustomerRegistration():
 
 # if users data has been added to the dictionary, we write it down to the file userdetails.txt 
     if (user!=None):
-        fo = open("userdetails.txt", "a")
-        fo.write(str(user['PhoneNumber'])+ ";"+ str(user['FirstName'])+ ";"+ str(user['LastName'])+ 
-        ";"+ str(user['Email'])+";"+ str(user['Password'])+";"+str(user['Plan']) +"\n")
-        fo.close()
-
-
+        try:
+            fo = open("userdetails.txt", "a")
+        except OSError:
+            print('cannot open', "userdetails.txt")
+        else:
+            fo.write(str(user['PhoneNumber'])+ ";"+ str(user['FirstName'])+ ";"+ str(user['LastName'])+ 
+            ";"+ str(user['Email'])+";"+ str(user['Password'])+";"+str(user['Plan']) +"\n")
+            fo.close()
+NewCustomerRegistration()
+print("Application Closed")
