@@ -1,4 +1,11 @@
+
 import os
+import NewUserRegistration
+import admin_menu
+import UserMenu
+
+
+
 
 userList = []
 userList.append({"phoneNumber": "0876621111", "firstName":"Anna", "lastName":"Tim", "email":"anna123@gmail.com", "password":"123456", "plan":"2"})
@@ -41,7 +48,8 @@ def LoginCustomer():
 
     if(username == userPhoneNumber and password == userPassword):
             print("Login Successful")
-            #plans code / function
+            UserMenu.mainMenu()
+        
     elif(username != userPhoneNumber and password != userPassword):
             print("Username & Password Invalid")
     elif(username != userPhoneNumber):
@@ -72,7 +80,7 @@ def LoginAdmin():
     
     if(aUsername == adminEmployeeNo and aPassword == adminPassword):
             print("Login Successful")
-            #admin code / function
+            admin_menu.admin_main_menu()
     elif(aUsername != adminEmployeeNo and aPassword != adminPassword):
             print("Username and login invalid")
     elif(aUsername != adminEmployeeNo):
@@ -80,9 +88,6 @@ def LoginAdmin():
     elif(aPassword != adminPassword):
             print("Invalid Password")
 
-def Register():
-    print()
-   #import Anna registration function
     
 userType = "0"
 while(userType != "4"):
@@ -96,7 +101,7 @@ while(userType != "4"):
         LoginAdmin()
     elif(userType == "3"):
         print("You have selected 'Register'")
-        Register()
+        NewUserRegistration.NewCustomerRegistration()
     elif(userType !="1" and userType != "2" and userType != "3" and userType != "4"):
         print("Invalid Choice - try again")
 
