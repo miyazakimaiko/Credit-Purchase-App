@@ -1,4 +1,20 @@
+#===============================================================================================
+# REQUIREMENTS
+# 
+# 1. Reports per User specified by Phone Number
+#   - Two Options: (A)Last Month (B)Date Range
+# 
+#   After selection - Reports display all customer's details (name, plan, phone number), 
+#   top-ups with dates, current balance
+# 
+#   Does it start from a search function or a list of customers? \
+#   The search is by phone number. The system will prompt for this input (Please, enter the phone number)
+#===============================================================================================
+
+
+
 def get_all_customers():
+
 
     # read txt file and create a list of customers here
     customers = []
