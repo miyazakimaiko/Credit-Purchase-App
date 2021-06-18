@@ -1,15 +1,21 @@
 import datetime
 import calendar
 from admin_menu_functions.general_report import *
+from admin_menu_functions.per_plan_report import *
 
 def admin_main_menu():
     print("=================")
+    print("\n")
+    print("ADMIN MAIN MENU")
+    print("\n")
     print("Selection:")
-    print("1. View a customer report <- not ready to test")
-    print("2. View per plan report <- not ready to test")
+    print("1. View a customer report <- x")
+    print("2. View per plan report <- ready to test")
     print("3. View general report <- ready to test")
-    print("4. View all customers <- not ready to test")
-    print("5. Exit\n")
+    print("4. View all customers <- x")
+    print("5. Exit")
+    print("\n")
+
 
     def get_selection():
         number = input("Please choose an option (1-5):")
@@ -25,34 +31,60 @@ def admin_main_menu():
 
         return number
 
+
     selection = get_selection()
 
     if selection == 1:
+        print("\n")
+        print("=================")
         print("SELECTED: 1. View a customer report")
+
         user_selection_menu()
+        admin_main_menu()
+
     elif selection == 2:
+        print("\n")
+        print("=================")
         print("SELECTED: 2. View per plan report")
+
         per_plan_report_plan_selection_menu()
+        admin_main_menu()
+
     elif selection == 3:
+        print("\n")
+        print("=================")
         print("SELECTED: 3. View general report")
+
         general_report_date_range_selection_menu()
+        admin_main_menu()
+
     elif selection == 4:
-        # get_all_customers()
+        print("\n")
+        print("=================")
         print("SELECTED: 4. View all customers")
+
+        # get_all_customers()
+
+    elif selection == 5:
+        print("\n")
+        print("exit")
+
+        # loginOrRegisterMenu()
 
 
 def user_selection_menu():
     phonenumber = input("Please enter phone number :")
+
     print("run get_cusomter_report_by_phone_number({0})".format(phonenumber))
 
 
 def per_plan_report_plan_selection_menu():
-    print("=================")
     print("Selection:")
-    print("1. Pay as You Go")
-    print("2. Top-Up-20 Plan")
-    print("3. Premium Plan")
+    print("1. Pay as You Go <- ready to test")
+    print("2. Top-Up-20 Plan <- ready to test")
+    print("3. Premium Plan <- ready to test")
     print("4. Exit\n")
+
 
     def get_plan():
         number = input("Please choose a plan(1-3) or Exit(4):")
@@ -68,21 +100,23 @@ def per_plan_report_plan_selection_menu():
 
         return number
 
+
     plan = get_plan()
 
     # Reminder.. 4 doesn't include in range when range(1, 4)
     if plan in range(1, 4): 
-        per_plan_report_date_range_selection_menu()
+        per_plan_report_date_range_selection_menu(plan)
+
     elif(plan == 4):
         exit()
 
 
-def per_plan_report_date_range_selection_menu():
-    print("=================")
+def per_plan_report_date_range_selection_menu(plan_number):
     print("Selection:")
-    print("1. Last Month")
-    print("2. Custom")
+    print("1. Last Month <- ready to test")
+    print("2. Custom <- ready to test")
     print("3. Exit\n")
+
 
     def get_selection():
         number = input("Please choose a date range(1 or 2) or Exit(3):")
@@ -98,6 +132,7 @@ def per_plan_report_date_range_selection_menu():
 
         return number
 
+
     selection = get_selection()
 
     if selection == 1:
@@ -107,14 +142,13 @@ def per_plan_report_date_range_selection_menu():
         start = datetime(today.year, prev_month, 1)
         end = datetime(today.year, prev_month, prev_monthrange[1])
 
-        # - - - - - - - error - wrong function - - - - - - - - - - - - - - - - - - - - - 
-        # get_all_topups_by_date_range(start, end)
+        get_selected_plans_topups_by_date_range(plan_number, start, end)
 
     elif selection == 2:
-        per_plan_report_custom_date_range_menu()
+        per_plan_report_custom_date_range_menu(2)
 
     elif selection == 3:
-        exit()
+        print("Exit")
 
 
 def get_start_date():
@@ -141,20 +175,19 @@ def get_end_date():
     return date
 
 
-def per_plan_report_custom_date_range_menu():
-
+def per_plan_report_custom_date_range_menu(plan_number):
     start = get_start_date()
     end = get_end_date()
 
-    print("run get_all_topups_by_date_range({0}, {1})".format(start, end))
+    get_selected_plans_topups_by_date_range(plan_number, start, end)
 
 
 def general_report_date_range_selection_menu():
-    print("=================")
     print("Selection:")
-    print("1. Last Month")
-    print("2. Custom")
+    print("1. Last Month <- ready to test")
+    print("2. Custom <- ready to test")
     print("3. Exit\n")
+
 
     def get_selection():
         number = input("Please choose a date range(1 or 2) or Exit(3):")
@@ -170,11 +203,12 @@ def general_report_date_range_selection_menu():
 
         return number
 
+
     selection = get_selection()
 
     if selection == 1:
         today = datetime.now()
-        prev_month = today.month - 1
+        prev_month = today.month - 1  # What happens if today is January??
         prev_monthrange = calendar.monthrange(today.year, prev_month)
         start = datetime(today.year, prev_month, 1)
         end = datetime(today.year, prev_month, prev_monthrange[1])
@@ -185,11 +219,10 @@ def general_report_date_range_selection_menu():
         general_report_custom_date_range_menu()
 
     elif selection == 3:
-        exit()
+        print("Exit")
 
 
 def general_report_custom_date_range_menu():
- 
     start = get_start_date()
     end = get_end_date()
 
