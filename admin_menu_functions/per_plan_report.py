@@ -103,7 +103,10 @@ def get_selected_plans_topups_by_date_range(plan_number, start_date, end_date):
 
         if start_date <= topup_date and end_date >= topup_date:
             total_charge += topup["charged"]
-            print(f"{topup['phone_number'].ljust(15)}{str(topup['charged']).ljust(10)}{str(topup['plan']).ljust(10)}{topup['date']}")
+            print(f"{topup['phone_number'].ljust(15)}\
+                {str(topup['charged']).ljust(10)}\
+                {str(topup['plan']).ljust(10)}\
+                {topup['date']}")
 
     print("\n")
     print("Total Charge: ", total_charge)
