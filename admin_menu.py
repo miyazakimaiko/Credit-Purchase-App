@@ -3,7 +3,7 @@ import calendar
 from admin_menu_functions.general_report import *
 from admin_menu_functions.per_plan_report import *
 
-def admin_main_menu():
+def show_admin_main_menu():
     print("=================")
     print("\n")
     print("ADMIN MAIN MENU")
@@ -39,24 +39,24 @@ def admin_main_menu():
         print("=================")
         print("SELECTED: 1. View a customer report")
 
-        user_selection_menu()
-        admin_main_menu()
+        show_user_selection_menu()
+        show_admin_main_menu()
 
     elif selection == 2:
         print("\n")
         print("=================")
         print("SELECTED: 2. View per plan report")
 
-        per_plan_report_plan_selection_menu()
-        admin_main_menu()
+        show_per_plan_report_plan_selection_menu()
+        show_admin_main_menu()
 
     elif selection == 3:
         print("\n")
         print("=================")
         print("SELECTED: 3. View general report")
 
-        general_report_date_range_selection_menu()
-        admin_main_menu()
+        show_general_report_date_range_selection_menu()
+        show_admin_main_menu()
 
     elif selection == 4:
         print("\n")
@@ -72,13 +72,13 @@ def admin_main_menu():
         # loginOrRegisterMenu()
 
 
-def user_selection_menu():
+def show_user_selection_menu():
     phonenumber = input("Please enter phone number :")
 
     print("run get_cusomter_report_by_phone_number({0})".format(phonenumber))
 
 
-def per_plan_report_plan_selection_menu():
+def show_per_plan_report_plan_selection_menu():
     print("Selection:")
     print("1. Pay as You Go <- ready to test")
     print("2. Top-Up-20 Plan <- ready to test")
@@ -105,13 +105,13 @@ def per_plan_report_plan_selection_menu():
 
     # Reminder.. 4 doesn't include in range when range(1, 4)
     if plan in range(1, 4): 
-        per_plan_report_date_range_selection_menu(plan)
+        show_per_plan_report_date_range_selection_menu(plan)
 
     elif(plan == 4):
         exit()
 
 
-def per_plan_report_date_range_selection_menu(plan_number):
+def show_per_plan_report_date_range_selection_menu(plan_number):
     print("Selection:")
     print("1. Last Month <- ready to test")
     print("2. Custom <- ready to test")
@@ -145,7 +145,7 @@ def per_plan_report_date_range_selection_menu(plan_number):
         get_selected_plans_topups_by_date_range(plan_number, start, end)
 
     elif selection == 2:
-        per_plan_report_custom_date_range_menu(2)
+        show_per_plan_report_custom_date_range_menu(2)
 
     elif selection == 3:
         print("Exit")
@@ -175,14 +175,14 @@ def get_end_date():
     return date
 
 
-def per_plan_report_custom_date_range_menu(plan_number):
+def show_per_plan_report_custom_date_range_menu(plan_number):
     start = get_start_date()
     end = get_end_date()
 
     get_selected_plans_topups_by_date_range(plan_number, start, end)
 
 
-def general_report_date_range_selection_menu():
+def show_general_report_date_range_selection_menu():
     print("Selection:")
     print("1. Last Month <- ready to test")
     print("2. Custom <- ready to test")
@@ -216,13 +216,13 @@ def general_report_date_range_selection_menu():
         get_all_topups_by_date_range(start, end)
 
     elif selection == 2:
-        general_report_custom_date_range_menu()
+        show_general_report_custom_date_range_menu()
 
     elif selection == 3:
         print("Exit")
 
 
-def general_report_custom_date_range_menu():
+def show_general_report_custom_date_range_menu():
     start = get_start_date()
     end = get_end_date()
 

@@ -80,7 +80,7 @@ def LoginAdmin():
     
     if(aUsername == adminEmployeeNo and aPassword == adminPassword):
             print("Login Successful")
-            admin_menu.admin_main_menu()
+            admin_menu.show_admin_main_menu()
     elif(aUsername != adminEmployeeNo and aPassword != adminPassword):
             print("Username and login invalid")
     elif(aUsername != adminEmployeeNo):
