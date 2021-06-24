@@ -1,6 +1,7 @@
 from Classes.user import User
 from Classes.admin import Admin
 from Classes.topup import Topup
+from Classes.usermenu import Usermenu
 
 
 user_list = []
@@ -28,11 +29,16 @@ def add_topups():
     topup_list.append(Topup("0871112345", 30.00, 3, "01/01/2021"))
 
 
+#usermenu=Usermenu()
+#usermenu.display_usermenu()
 
-add_users()
-add_admin()
-add_topups()
 
-print(user_list)
-print(admin_list)
-print(topup_list)
+
+
+#add_users()
+#add_admin()
+#add_topups()
+
+#print(user_list)
+#print(admin_list)
+#print(topup_list)
