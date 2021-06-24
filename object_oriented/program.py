@@ -33,6 +33,12 @@ add_users()
 add_admin()
 add_topups()
 
-print(user_list)
-print(admin_list)
-print(topup_list)
+print(user_list[0])
+# print(admin_list)
+# print(topup_list)
+
+# using User phone_number setter here..
+user_list[3].phone_number = "0000000"
+
+# Now it changed the phone number
+print(user_list[3])
