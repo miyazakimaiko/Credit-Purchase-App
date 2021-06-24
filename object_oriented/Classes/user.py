@@ -10,7 +10,7 @@ class User:
         self.current_balance = current_balance
 
     def __repr__(self):
-        return f"{self.phone_number}, {self.first_name}, {self.last_name}, {self.email_address}, {self.plan}, {self.current_balance}"
+        return f"({self.phone_number}, {self.first_name}, {self.last_name}, {self.email_address}, {self.plan}, {self.current_balance})"
 
     
 
