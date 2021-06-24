@@ -33,14 +33,14 @@ add_users()
 add_admin()
 add_topups()
 
-print(user_list)
-print(admin_list)
-print(topup_list)
+# print(user_list)
+# print(admin_list)
+# print(topup_list)
 
 
 # ====== test for setter -- Working :) ======
-# print(user_list[0])
-# 
+print(user_list[3])
+
 # user_list[3].phone_number = "0000000"
 # user_list[3].first_name = "mmmmmm"
 # user_list[3].last_name = "yyyyy"
@@ -48,7 +48,8 @@ print(topup_list)
 # user_list[3].password = "pppppppp"
 # user_list[3].plan = 1
 # user_list[3].add_balance = 10
-# 
+# user_list[3].add_topup = Topup("0871112345", 30.00, 3, "01/01/2021")
+
 # Now it changed all the values
-#  print(user_list[3])
+print(user_list[3])
 # ====== test for setter -- Working :) ======

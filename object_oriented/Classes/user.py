@@ -1,6 +1,6 @@
 class User:
 
-    def __init__(self, phone_number, first_name, last_name, email_address, password, plan, current_balance):
+    def __init__(self, phone_number, first_name, last_name, email_address, password, plan, current_balance, topup_history=[]):
         self._phone_number = phone_number
         self._first_name = first_name
         self._last_name = last_name
@@ -8,6 +8,7 @@ class User:
         self._password = password
         self._plan = plan
         self._current_balance = current_balance
+        self._topup_history = topup_history
 
     @property
     def phone_number(self):
@@ -36,6 +37,10 @@ class User:
     @property
     def current_balance(self):
         return self._current_balance
+
+    @property
+    def topup_history(self):
+        return self._topup_history
 
 
     @phone_number.setter
@@ -66,8 +71,12 @@ class User:
     def add_balance(self, amount):
         self._current_balance += amount
 
+    @topup_history.setter
+    def add_topup(self, topup):
+        self._topup_history.append(topup)
+
     def __repr__(self):
-        return f"({self._phone_number}, {self._first_name}, {self._last_name}, {self._email_address}, {self._plan}, {self._current_balance})"
+        return f"({self._phone_number}, {self._first_name}, {self._last_name}, {self._email_address}, {self._plan}, {self._current_balance}, {self._topup_history})"
 
     
 
