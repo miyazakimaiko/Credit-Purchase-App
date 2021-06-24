@@ -1,6 +1,7 @@
 from Classes.user import User
 from Classes.admin import Admin
 from Classes.topup import Topup
+from Classes.usermenu import Usermenu
 
 
 user_list = []
@@ -28,17 +29,39 @@ def add_topups():
     topup_list.append(Topup("0871112345", 30.00, 3, "01/01/2021"))
 
 
+#usermenu=Usermenu()
+#usermenu.display_usermenu()
 
-add_users()
-add_admin()
-add_topups()
 
-print(user_list[0])
+<<<<<<< HEAD
+
+
+#add_users()
+#add_admin()
+#add_topups()
+
+#print(user_list)
+#print(admin_list)
+#print(topup_list)
+=======
+# print(user_list)
 # print(admin_list)
 # print(topup_list)
 
-# using User phone_number setter here..
-user_list[3].phone_number = "0000000"
 
-# Now it changed the phone number
+# ====== test for setter -- Working :) ======
 print(user_list[3])
+
+# user_list[3].phone_number = "0000000"
+# user_list[3].first_name = "mmmmmm"
+# user_list[3].last_name = "yyyyy"
+# user_list[3].email_address = "eeeeee"
+# user_list[3].password = "pppppppp"
+# user_list[3].plan = 1
+# user_list[3].add_balance = 10
+# user_list[3].add_topup = Topup("0871112345", 30.00, 3, "01/01/2021")
+
+# Now it changed all the values
+print(user_list[3])
+# ====== test for setter -- Working :) ======
+>>>>>>> 655206d218cfa3db2d10ebff6dd38ca9d49923e2
