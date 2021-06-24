@@ -13,9 +13,58 @@ class User:
     def phone_number(self):
         return self._phone_number
 
+    @property
+    def first_name(self):
+        return self._first_name
+
+    @property
+    def last_name(self):
+        return self._last_name
+
+    @property
+    def email_address(self):
+        return self._email_address
+
+    @property
+    def password(self):
+        return self._password
+
+    @property
+    def plan(self):
+        return self._plan
+
+    @property
+    def current_balance(self):
+        return self._current_balance
+
+
     @phone_number.setter
     def phone_number(self, number):
         self._phone_number = number
+
+    @first_name.setter
+    def first_name(self, fname):
+        self._first_name = fname
+
+    @last_name.setter
+    def last_name(self, lname):
+        self._last_name = lname
+
+    @email_address.setter
+    def email_address(self, email):
+        self._email_address = email
+
+    @password.setter
+    def password(self, pwd):
+        self._password = pwd
+
+    @plan.setter
+    def plan(self, number):
+        self._plan = number
+
+    @current_balance.setter
+    def add_balance(self, amount):
+        self._current_balance += amount
 
     def __repr__(self):
         return f"({self._phone_number}, {self._first_name}, {self._last_name}, {self._email_address}, {self._plan}, {self._current_balance})"
