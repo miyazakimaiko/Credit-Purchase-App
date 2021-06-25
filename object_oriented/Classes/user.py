@@ -42,7 +42,6 @@ class User:
     def topup_history(self):
         return self._topup_history
 
-
     @phone_number.setter
     def phone_number(self, number):
         self._phone_number = number
@@ -67,11 +66,9 @@ class User:
     def plan(self, number):
         self._plan = number
 
-    @current_balance.setter
     def add_balance(self, amount):
         self._current_balance += amount
 
-    @topup_history.setter
     def add_topup(self, topup):
         self._topup_history.append(topup)
 
