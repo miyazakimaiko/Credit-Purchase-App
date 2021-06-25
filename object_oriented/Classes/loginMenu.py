@@ -3,10 +3,12 @@ from .usermenu import Usermenu
 
 class LoginMenu():
 
-    def __init__(self, data):
+    def __init__(self, data, number=None, user_menu=None, admin_menu=None):
         self.user_list = data.user_list
         self.admin_list = data.admin_list
-        self.user_menu = Usermenu()
+        self.phone_number = number
+        self.user_menu = user_menu
+        self.admin_menu = admin_menu
 
     def clearscreen(self):
         os.system('cls')        
