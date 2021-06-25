@@ -1,9 +1,13 @@
 import os
-from user import User
-from admin import Admin
-
+from .usermenu import Usermenu
 
 class LoginMenu():
+
+    def __init__(self, data):
+        self.user_list = data.user_list
+        self.admin_list = data.admin_list
+        self.user_menu = Usermenu()
+
     def clearscreen(self):
         os.system('cls')        
     #printing the menu options  
@@ -13,6 +17,7 @@ class LoginMenu():
          print("2. Login - admin")
          print("3. Register")
          print("4. Exit Application")
+
 
          selection = "0"
 
@@ -56,7 +61,7 @@ class LoginMenu():
             user_password = found_user.user.password
         if(username == user.phone_number and user.password == user_password):
             print("Login Successful")
-            #userlogin class
+            self.user_menu.display_usermenu()
         elif(username != user_phone_number and user.password != user_password):
             print("Username and password invalid ")
         elif(username == user_phone_number and user.password != user_password):
@@ -140,20 +145,3 @@ class LoginMenu():
          elif(selection != "2"):
             print("Please return to menu and select a digit from 1 to 2")
             input("Return to continue...")
-
-
-
-
-# loginMenu = LoginMenu()
-# loginMenu.loginOrRegisterMenu()    
-# 
-loginMenu_object = LoginMenu()
-loginMenu_object.LoginMenu()
-    
-
-    
-
-        
-         
-
- 
