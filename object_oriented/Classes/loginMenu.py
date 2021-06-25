@@ -14,12 +14,13 @@ class LoginMenu():
          print("3. Register")
          print("4. Exit Application")
 
-       
+         selection = "0"
+
          while(selection != "4"):
              selection = input("Please choose option (1-4): ")
              if(selection == "1"):
                  print("You have selected 'Login - customer'")
-                 #self.login()
+                 self.login()
              elif(selection == "2"):
                 print("You have selected 'Login - admin'")
                 #self.login_admin
@@ -146,9 +147,8 @@ class LoginMenu():
 # loginMenu = LoginMenu()
 # loginMenu.loginOrRegisterMenu()    
 # 
-# 
-#loginMenu_object = LoginMenu()
-#loginMenu_object.get_selection()
+loginMenu_object = LoginMenu()
+loginMenu_object.LoginMenu()
     
 
     
