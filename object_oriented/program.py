@@ -1,5 +1,11 @@
-from Classes.loginMenu import LoginMenu
+
 from Classes.data import Data
+from Classes.usermenu import Usermenu
+from Classes.user import User
+
+#from Classes.user import User
+
+
 import os
 
 def clearscreen():
@@ -9,7 +15,22 @@ clearscreen()
 
 data_object = Data()
 data_object.add_users()
-data_object.add_admins()
+#data_object.add_admins()
 
-login_menu = LoginMenu(data_object)
-login_menu.get_selection()
+
+########   Emma   Loginmenu   #####
+
+#login_menu = LoginMenu(data_object)
+#login_menu.get_selection()
+
+##############################
+
+user_menu=Usermenu(data_object.user_list)
+user_menu.display_usermenu()
+
+
+
+
+
+
+
