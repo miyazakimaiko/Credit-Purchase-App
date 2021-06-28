@@ -1,5 +1,6 @@
 #from .user import User
-import os
+from .utils import Utils
+
 
 class Usermenu:
 
@@ -7,13 +8,10 @@ class Usermenu:
         #self.data=data
         self.user_list=data
         #self.usermenu=user_menu
-        
-
-    def clear_screen(self):
-        os.system('cls')
+    
 
     def display_usermenu(self):  # Displaying  user menu
-        self.clear_screen()
+        Utils.clear_screen()
         current_usernumber="0862173794"
         topup_amount=0
         choice="0"
@@ -29,15 +27,15 @@ class Usermenu:
         choice=input("Please enter your option[1/2/3/4/5] : ")
 
         if (choice=="1"):
-            self.clear_screen()
+            Utils.clear_screen()
             print("  Customer Balance   ")
             print(" ")
             self.view_balance(current_usernumber)
             input("Enter return to continue")
-            self.clear_screen()
+            Utils.clear_screen()
             self.display_usermenu()
         elif(choice=="2"):
-            self.clear_screen()
+            Utils.clear_screen()
             print("    Credit top up")
             print("    *************")
             print("1. £5")
@@ -52,14 +50,14 @@ class Usermenu:
                     self.credit_top_up(current_usernumber,topup_amount)
                     print("")
                     input("please enter return to continue.....")
-                    self.clear_screen()
+                    Utils.clear_screen()
                     self.display_usermenu()
             elif choice1 == "2":
                         topup_amount=10
                         self.credit_top_up(current_usernumber,topup_amount)
                         print("")
                         input("please enter return to continue")
-                        self.clear_screen()
+                        Utils.clear_screen()
                         self.display_usermenu()
                     
             elif choice1 == "3":
@@ -67,7 +65,7 @@ class Usermenu:
                         self.credit_top_up(current_usernumber,topup_amount)
                         print("")
                         input("please enter return to continue")
-                        self.clear_screen()
+                        Utils.clear_screen()
                         self.display_usermenu()
                         
             elif choice1 =="4":
@@ -75,7 +73,7 @@ class Usermenu:
                         self.credit_top_up(current_usernumber,topup_amount)
                         print("")
                         input("please enter return to continue")
-                        self.clear_screen()
+                        Utils.clear_screen()
                         self.display_usermenu()
                         
             elif choice1 == "5":
@@ -83,22 +81,22 @@ class Usermenu:
                         self.credit_top_up(current_usernumber,topup_amount)
                         print("")
                         input("please enter return to continue")
-                        self.clear_screen()
+                        Utils.clear_screen()
                         self.display_usermenu
                     
             elif choice1 == "6":
-                        self.clear_screen()
+                        Utils.clear_screen()
                         self.display_usermenu()
                     
             else:
                     print("Invalid Entry")
                     self.display_usermenu()
                     print("Enter return to continue")
-                    self.clear_screen()
+                    Utils.clear_screen()
                     self.display_usermenu()
         elif(choice=="3"):
-            ######################## plan change
-            self.clear_screen()
+            
+            Utils.clear_screen()
             choice2=""
             new_plan=0
             print("    Change your plan")
@@ -113,36 +111,36 @@ class Usermenu:
                 self.change_plan(current_usernumber,new_plan)
                 print("You have switched over to pre pay")
                 input("Enter return to continue...")
-                self.clear_screen()
+                Utils.clear_screen()
                 self.display_usermenu()         
             elif choice2 =="2":
                 new_plan=2
                 self.change_plan(current_usernumber,new_plan)
                 print("You have switched over to bill pay")
                 input("Enter return to continue....")
-                self.clear_screen()
+                Utils.clear_screen()
                 self.display_usermenu()
             elif choice2 =="3":
                 new_plan=3
                 self.change_plan(current_usernumber,new_plan)
                 print("You have switched over to a sim-only plan")
                 input("Enter return to continue....")
-                self.clear_screen()
+                Utils.clear_screen()
                 self.display_usermenu()
             elif choice2 =="4":
-                self.clear_screen()
+                Utils.clear_screen()
                 self.display_usermenu()
             else:
                 print("Invalid Entry ...")
                 self.change_plan()
                 ##########################
                 print("Enter return to continue")
-                self.clear_screen()
+                Utils.clear_screen()
                 self.display_usermenu()
         elif(choice=="4"):
             #self.view_statement()
             print("Enter return to continue")
-            self.clear_screen()
+            Utils.clear_screen()
             self.display_usermenu()
         elif(choice=="5"):
             exit()
