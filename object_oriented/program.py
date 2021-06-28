@@ -25,8 +25,15 @@ data_object.add_users()
 
 ##############################
 
+#########   Silpa    User menu  ########
 user_menu=Usermenu(data_object.user_list)
 user_menu.display_usermenu()
+
+#########################################
+
+######### Bruna    Admin menu  ############
+
+
 
 
 

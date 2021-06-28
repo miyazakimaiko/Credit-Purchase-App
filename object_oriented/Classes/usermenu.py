@@ -1,4 +1,4 @@
-from .user import User
+#from .user import User
 import os
 
 class Usermenu:
@@ -32,14 +32,7 @@ class Usermenu:
             self.clear_screen()
             print("  Customer Balance   ")
             print(" ")
-            #current_usernumber="0862173794"
-            for user in self.user_list:
-                if(current_usernumber==user.phone_number):
-                    print("Phone Number      :   ",user.phone_number)
-                    print("First  Name       :   ",user.first_name)
-                    print("last  Name        :   ",user.last_name)
-                    print("Account balance   :   ",user.current_balance)
-
+            self.view_balance(current_usernumber)
             input("Enter return to continue")
             self.clear_screen()
             self.display_usermenu()
@@ -64,7 +57,7 @@ class Usermenu:
             elif choice1 == "2":
                         topup_amount=10
                         self.credit_top_up(current_usernumber,topup_amount)
-                        print("You have topped up with £10")
+                        print("")
                         input("please enter return to continue")
                         self.clear_screen()
                         self.display_usermenu()
@@ -72,7 +65,7 @@ class Usermenu:
             elif choice1 == "3":
                         topup_amount=15
                         self.credit_top_up(current_usernumber,topup_amount)
-                        print("You have topped up with £15")
+                        print("")
                         input("please enter return to continue")
                         self.clear_screen()
                         self.display_usermenu()
@@ -80,7 +73,7 @@ class Usermenu:
             elif choice1 =="4":
                         topup_amount=20
                         self.credit_top_up(current_usernumber,topup_amount)
-                        print("You have topped up with £20")
+                        print("")
                         input("please enter return to continue")
                         self.clear_screen()
                         self.display_usermenu()
@@ -88,7 +81,7 @@ class Usermenu:
             elif choice1 == "5":
                         topup_amount=25
                         self.credit_top_up(current_usernumber,topup_amount)
-                        print("You have topped up with £25")
+                        print("")
                         input("please enter return to continue")
                         self.clear_screen()
                         self.display_usermenu
@@ -117,19 +110,21 @@ class Usermenu:
             choice2=input("Enter your choice  :  ")
             if choice2 =="1":
                 new_plan=1
-                #self.change_plan(self,current_usernumber,new_plan)
+                self.change_plan(current_usernumber,new_plan)
                 print("You have switched over to pre pay")
                 input("Enter return to continue...")
                 self.clear_screen()
                 self.display_usermenu()         
             elif choice2 =="2":
                 new_plan=2
+                self.change_plan(current_usernumber,new_plan)
                 print("You have switched over to bill pay")
                 input("Enter return to continue....")
                 self.clear_screen()
                 self.display_usermenu()
             elif choice2 =="3":
                 new_plan=3
+                self.change_plan(current_usernumber,new_plan)
                 print("You have switched over to a sim-only plan")
                 input("Enter return to continue....")
                 self.clear_screen()
@@ -161,6 +156,16 @@ class Usermenu:
                 exit()
 
 
+    ## function to view balance######################
+
+    def view_balance(self,current_usernumber):
+        for user in self.user_list:
+                if(current_usernumber==user.phone_number):
+                    print("Phone Number      :   ",user.phone_number)
+                    print("First  Name       :   ",user.first_name)
+                    print("last  Name        :   ",user.last_name)
+                    print("Account balance   :   ",user.current_balance)
+
     
 
         
@@ -168,13 +173,9 @@ class Usermenu:
     def credit_top_up(self,current_usernumber,topup_amount):
         for user in self.user_list:
                 if(current_usernumber==user.phone_number):
-                    #balance=user.current_balance
-                    #balance=balance+topup_amount
-                    #user.current_balance=balance
                     user.add_balance(topup_amount)
-        print("")
-        print(" Your topup amount is  : ", topup_amount)
-        print(" Youraccount balance is ", user.current_balance)
+                    print(" Your topup amount is  : ", topup_amount)
+                    print(" Youraccount balance is ", user.current_balance)
                     
 
         
@@ -184,9 +185,11 @@ class Usermenu:
     ####function for changing plan####
     
     def change_plan(self,current_usernumber,new_plan):
-        for user in self.data.user_list:
+        for user in self.user_list:
                 if(current_usernumber==user.phone_number):
-                    user.plan=new_plan
+                    current_plan=user.plan
+                    user.change_plan(new_plan)
+                    print("")
 
                      
 ##############################################################

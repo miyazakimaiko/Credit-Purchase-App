@@ -72,6 +72,9 @@ class User:
     def add_topup(self, topup):
         self._topup_history.append(topup)
 
+    def change_plan(self,new_plan):
+        self._plan=new_plan
+
     def __repr__(self):
         return f"({self._phone_number}, {self._first_name}, {self._last_name}, {self._email_address}, {self._plan}, {self._current_balance}, {self._topup_history})"
 
