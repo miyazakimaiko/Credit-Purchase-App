@@ -1,6 +1,6 @@
 class User:
 
-    def __init__(self, phone_number, first_name, last_name, email_address, password, plan, current_balance, topup_history=[]):
+    def __init__(self, phone_number, first_name, last_name, email_address, password, plan, current_balance):
         self._phone_number = phone_number
         self._first_name = first_name
         self._last_name = last_name
@@ -8,7 +8,7 @@ class User:
         self._password = password
         self._plan = plan
         self._current_balance = current_balance
-        self._topup_history = topup_history
+        self._topup_history = []
 
     @property
     def phone_number(self):
