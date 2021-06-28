@@ -17,8 +17,8 @@ class Data:
         self.user_list.append(User("0834837641", "Maiko", "Miyazaki", "maiko@brown.ie", "1987", 3, 100.00))
         
     def add_admins(self):
-        self.admin_list.append(Admin("0000", "manager0"))
-        self.admin_list.append(Admin("1111", "manager1"))
-        self.admin_list.append(Admin("2222", "manager2"))
-        self.admin_list.append(Admin("3333", "manager3"))
+        self.admin_list.append(Admin("manager0"))
+        self.admin_list.append(Admin("manager1"))
+        self.admin_list.append(Admin("manager2"))
+        self.admin_list.append(Admin("manager3"))
 

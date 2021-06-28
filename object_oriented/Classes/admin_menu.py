@@ -1,18 +1,19 @@
-import os
-#from .user import User
+from .utils import Utils 
+#from user import User ###?????????
+#from data import Data
+
+#from data import admin_list ### how to do it?
+
 #import datetime
 #import calendar
 
 class Admin_menu:
 
-    #def __init__(self, data, number=None, user_menu=None):
-        #self.user_list = data.user_list
-        #self.phone_number = number
-        #self.user_menu = user_menu
-
-    def clear_screen(self):
-        os.systems('cls')
-
+    def __init__(self, data):
+        self.admin_list = data.admin_list
+        
+        
+     
     def show_admin_menu(self): 
         print("=================")
         print("\n")
@@ -32,7 +33,7 @@ class Admin_menu:
             print("\n")
             print("=================")
             print("SELECTED: 1. View a customer report")
-            #self.clear_screen()
+            Utils.clear_screen()
             self.show_user_selection_menu()
             self.show_admin_menu()
 
@@ -40,7 +41,7 @@ class Admin_menu:
             print("\n")
             print("=================")
             print("SELECTED: 2. View per plan report")
-            #self.clear_screen()
+            Utils.clear_screen()
             self.show_per_plan_report_plan_selection_menu()
             self.show_admin_menu()
 
@@ -48,7 +49,7 @@ class Admin_menu:
             print("\n")
             print("=================")
             print("SELECTED: 3. View general report")
-            self.clear_screen()
+            Utils.clear_screen()
             #show_general_report_date_range_selection_menu()
             self.show_admin_menu()
 
@@ -56,7 +57,7 @@ class Admin_menu:
             print("\n")
             print("=================")
             print("SELECTED: 4. View all customers")
-            self.clear_screen()
+            Utils.clear_screen()
             self.show_admin_menu()
             #get_all_customers()
 
@@ -135,7 +136,7 @@ class Admin_menu:
 
     
     
-admin_menu=Admin_menu()
-admin_menu.show_admin_menu()
+#admin_menu=Admin_menu()
+#admin_menu.show_admin_menu()
 #admin_menu.get_selection()
 #admin_menu.show_user_selection_menu()
